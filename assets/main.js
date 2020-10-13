@@ -1,68 +1,49 @@
-// VARIABILI
-
-var UserFirstName
-var FirstNameParagraph
-
-var UserLastName
-var LastNameParagraph
-
-var UserFavouriteColor
-var FavouriteColorParagraph
-
-var PasswordParagraph
-var RandomNumber
-
 // -----
-// FIRST NAME
+// DISTANCE
+
+var distance
 
 // prompt
-var UserFirstName = prompt("Come ti chiami?");
-console.log("Nome: " + UserFirstName);
+distance = Math.ceil(prompt("Inserisci la distanza (in km)"));
+console.log("Distanza: " + distance + " km");
 
-// getElement paragraph
-var FirstNameParagraph = document.getElementById("FirstName").innerHTML;
-console.log("Contenuto del paragrafo \"FirstName\": " + FirstNameParagraph);
-
-// riscrittura
-document.getElementById("FirstName").innerHTML = FirstNameParagraph + UserFirstName + ".";
+// innerHTML --> #distance
+if (!isNaN(distance)) {
+    document.getElementById("distance").innerHTML = distance + " km";
+} else {
+    document.getElementById("distance").innerHTML = "** Attenzione! Inserire una distanza corretta **"
+}
 
 // -----
-// LAST NAME
+// AGE
+
+var age
 
 // prompt
-var UserLastName = prompt("Qual'è il tuo cognome?");
-console.log("Cognome: " + UserLastName);
+age = Math.floor(prompt("Quanti anni hai?"));
+console.log("Età: " + age + " anni");
 
-// getElement paragraph
-var LastNameParagraph = document.getElementById("LastName").innerHTML;
-console.log("Contenuto del paragrafo \"LastName\": " + LastNameParagraph);
-
-// riscrittura
-document.getElementById("LastName").innerHTML = LastNameParagraph + UserLastName + ".";
-
-// -----
-// FAVOURITE COLOR
-
-// prompt
-var UserFavouriteColor = prompt("Qual'è il tuo colore preferito?");
-console.log("Colore preferito: " + UserFavouriteColor);
-
-// getElement paragraph
-var FavouriteColorParagraph = document.getElementById("FavouriteColor").innerHTML;
-console.log("Contenuto del paragrafo \"FavouriteColor\": " + FavouriteColorParagraph);
-
-// riscrittura
-document.getElementById("FavouriteColor").innerHTML = FavouriteColorParagraph + UserFavouriteColor + ".";
+// innerHTML --> #age
+if (!isNaN(age)) {
+    document.getElementById("age").innerHTML = age + " anni";
+} else {
+    document.getElementById("age").innerHTML = "** Attenzione! Inserire un'età corretta **"
+}
 
 // -----
-// PASSWORD E NUMBER
+// DISCOUNT
+var discount
 
-// getElement paragraph
-var PasswordParagraph = document.getElementById("Password").innerHTML;
-console.log("Contenuto del paragrafo \"Password\": " + PasswordParagraph);
+if(age < 18) {
+    discount = 20;
+    document.getElementById("discount").innerHTML = "Hai diritto ad uno sconto del " + discount + "%!"
+} else if (age < 65) {
+    discount = 0;
+} else {
+    discount = 40;
+    document.getElementById("discount").innerHTML = "Hai diritto ad uno sconto del " + discount + "%!"
+}
 
-// number
-var RandomNumber = 20;
+console.log("Sconto: " + discount + " %")
 
-// riscrittura
-document.getElementById("Password").innerHTML = PasswordParagraph + UserFirstName + UserLastName + UserFavouriteColor + RandomNumber;
+// -----
