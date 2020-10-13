@@ -1,7 +1,7 @@
 // -----
 // DISTANCE
 
-var distance
+var distance;
 
 // prompt
 distance = Math.ceil(prompt("Inserisci la distanza (in km)"));
@@ -32,7 +32,7 @@ if (!isNaN(age)) {
 
 // -----
 // DISCOUNT
-var discount
+var discount;
 
 if(age < 18) {
     discount = 20;
@@ -46,13 +46,13 @@ if(age < 18) {
     discount = undefined;
 }
 
-console.log("Sconto: " + discount + " %")
+console.log("Sconto: " + discount + " %");
 
 // -----
 // CALCOLO PREZZO DEL BIGLIETTO
 
 var pricePerKm = 0.21;
-var price
+var price;
 
 if(!isNaN(age) && !isNaN(distance)) {
     price = Math.ceil(distance * pricePerKm * (100 - discount) / 100);
@@ -61,4 +61,4 @@ if(!isNaN(age) && !isNaN(distance)) {
     document.getElementById("price").innerHTML = "** Attenzione! Aggiornare la pagina ed inserire i valori correttamente **";
 }
 
-console.log("Prezzo: " + price + " €")
+console.log("Prezzo: " + price + " €");
