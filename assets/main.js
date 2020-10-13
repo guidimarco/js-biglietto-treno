@@ -11,7 +11,7 @@ console.log("Distanza: " + distance + " km");
 if (!isNaN(distance)) {
     document.getElementById("distance").innerHTML = distance + " km";
 } else {
-    document.getElementById("distance").innerHTML = "** Attenzione! Inserire una distanza corretta **"
+    document.getElementById("distance").innerHTML = "** Attenzione! Inserire una distanza corretta **";
 }
 
 // -----
@@ -27,7 +27,7 @@ console.log("Età: " + age + " anni");
 if (!isNaN(age)) {
     document.getElementById("age").innerHTML = age + " anni";
 } else {
-    document.getElementById("age").innerHTML = "** Attenzione! Inserire un'età corretta **"
+    document.getElementById("age").innerHTML = "** Attenzione! Inserire un'età corretta **";
 }
 
 // -----
@@ -36,14 +36,29 @@ var discount
 
 if(age < 18) {
     discount = 20;
-    document.getElementById("discount").innerHTML = "Hai diritto ad uno sconto del " + discount + "%!"
+    document.getElementById("discount").innerHTML = "Hai diritto ad uno sconto del " + discount + "%!";
 } else if (age < 65) {
     discount = 0;
-} else {
+} else if(!isNaN(age)) {
     discount = 40;
-    document.getElementById("discount").innerHTML = "Hai diritto ad uno sconto del " + discount + "%!"
+    document.getElementById("discount").innerHTML = "Hai diritto ad uno sconto del " + discount + "%!";
+} else {
+    discount = undefined;
 }
 
 console.log("Sconto: " + discount + " %")
 
 // -----
+// CALCOLO PREZZO DEL BIGLIETTO
+
+var pricePerKm = 0.21;
+var price
+
+if(!isNaN(age) && !isNaN(distance)) {
+    price = Math.ceil(distance * pricePerKm * (100 - discount) / 100);
+    document.getElementById("price").innerHTML = price + " €";
+} else {
+    document.getElementById("price").innerHTML = "** Attenzione! Aggiornare la pagina ed inserire i valori correttamente **";
+}
+
+console.log("Prezzo: " + price + " €")
