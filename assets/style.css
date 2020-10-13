@@ -1,0 +1,160 @@
+/* ||||| RESET E NORMALIZZAZIONE ||||| */
+/* <editor-fold */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* </editor-fold> */
+/* \\\\\ RESET E NORMALIZZAZIONE ///// */
+
+/* ||||| GRID ||||| */
+/* <editor-fold */
+#wrapper {
+    height: 100vh;
+    background-color: lightblue;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr auto 1fr;
+    row-gap: 20px;
+    padding: 20px;
+}
+
+#main-wrapper {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(5, auto);
+    row-gap: 10px;
+    grid-template-areas:
+        "title"
+        "first-name"
+        "last-name"
+        "favourite-color"
+        "password"
+    ;
+    padding: 10px;
+}
+
+.title {
+    grid-area: title;
+}
+
+.first-name {
+    grid-area: first-name;
+}
+
+.last-name {
+    grid-area: last-name;
+}
+
+.favourite-color {
+    grid-area: favourite-color;
+}
+
+.password {
+    grid-area: password;
+}
+
+/* XS */
+@media screen and (min-width: 576px) {
+    #main-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, auto);
+        row-gap: 10px;
+        column-gap: 10px;
+        grid-template-areas:
+            "title title"
+            "first-name last-name"
+            "favourite-color ."
+            "password password";
+        ;
+    }
+}
+/* SM */
+@media screen and (min-width: 768px) {
+
+}
+/* MD */
+@media screen and (min-width: 992px) {
+    #main-wrapper {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, auto);
+        grid-template-areas:
+            "title title title"
+            "first-name last-name favourite-color"
+            "password password password";
+        ;
+    }
+}
+/* LG */
+@media screen and (min-width: 1200px) {
+
+}
+/* XL */
+/* </editor-fold> */
+/* \\\\\ GRID ///// */
+
+/* ---------------- */
+/* ---------------- */
+/* ----- HTML ----- */
+/* ---------------- */
+/* ---------------- */
+
+/* ||||| HEADER ||||| */
+/* <editor-fold */
+header {
+    background-color: #B03532;
+    border-radius: 10px;
+}
+
+/* </editor-fold> */
+/* \\\\\ END HEADER ///// */
+
+/* ||||| MAIN ||||| */
+/* <editor-fold */
+main {
+    background-color: white;
+    border-radius: 10px;
+}
+
+#main-wrapper > div {
+    border-radius: 10px;
+}
+
+.title{
+    background-color: #DA6F2B;
+}
+
+.first-name,
+.last-name,
+.favourite-color {
+    background-color: #4464A1;
+}
+
+.password {
+    background-color: #33A8A5;
+}
+
+/* </editor-fold> */
+/* \\\\\ END MAIN ///// */
+
+/* ||||| FOOTER ||||| */
+/* <editor-fold */
+footer {
+    background-color: #6A478F;
+    border-radius: 10px;
+}
+
+/* </editor-fold> */
+/* \\\\\ END FOOTER ///// */
+
+@media screen and (min-width: 576px) {
+    .title,
+    .first-name,
+    .last-name,
+    .favourite-color,
+    .password {
+        text-align: center;
+    }
+}
